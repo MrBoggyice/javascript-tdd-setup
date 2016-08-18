@@ -43,7 +43,9 @@ describe("NotesApplication attributes and methods behaves properly",
         function(){
             var notesapp = new NotesApplication();
             notesapp.create("Hi there!", "Fortune");
-            assert(notesapp.listNotes() == 'Note ID: 0\nHello there!\nBy Author: Fortune\n\n');
+            var list = notesapp.listNotes(); //console.log(notesapp.listNotes());
+            assert(list.length === 1);
+            assert(list[0].id === 0)
     })
 
     it("Ensures a given note id returns the content", 
@@ -58,7 +60,7 @@ describe("NotesApplication attributes and methods behaves properly",
         function(){
             var notesapp = new NotesApplication();
             notesapp.create("Hi there!", "Fortune");
-            assert(notesapp.search("there!") == notesapp.noteList[0].content);
+            assert(notesapp.search("there!") == "Hi there!");
         })
 
     it("Ensures that a note is deleted", function(){
