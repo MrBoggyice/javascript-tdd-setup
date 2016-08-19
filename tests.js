@@ -43,7 +43,7 @@ describe("NotesApplication attributes and methods behaves properly",
         function(){
             var notesapp = new NotesApplication();
             notesapp.create("Hi there!", "Fortune");
-            var list = notesapp.listNotes(); //console.log(notesapp.listNotes());
+            var list = notesapp.listNotes();
             assert(list.length === 1);
             assert(list[0].id === 0)
     })
